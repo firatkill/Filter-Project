@@ -1,8 +1,7 @@
 * {
   font-family: "Kaushan Script", cursive;
 }
-body {
-}
+
 @media only screen and (min-width: 1000px) {
   #navbarNavDropdown {
     display: flex;
