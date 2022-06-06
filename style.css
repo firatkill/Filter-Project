@@ -172,21 +172,41 @@ body {
   font-size: 1.5rem;
   font-weight: bolder;
 }
-#store .col .card img:hover {
-  animation-name: grow;
-  animation-duration: 3s;
+#store .card:hover {
+  background-color: rgb(10, 10, 160);
+  color: White;
 }
-@keyframes grow {
-  0% {
-    width: 100%;
-    height: 100%;
-  }
-  50% {
-    width: 125%;
-    height: 125%;
-  }
-  100% {
-    width: 100%;
-    height: 100%;
-  }
+#store .col .card img {
+  transition: width 2s, height 2s;
+}
+#store .col .card:hover img {
+  width: 125%;
+  height: 125%;
+}
+#store .col .card:hover .fa-cart-plus {
+  right: 0;
+  bottom: 16.5%;
+}
+#store .col .card .fa-cart-plus {
+  position: absolute;
+  right: -100px;
+  bottom: -19%;
+  color: rgb(239, 121, 152);
+  background-color: white;
+  font-size: 3rem;
+  padding: 1rem;
+  border-radius: 10px 0px 0px 0px;
+}
+#store .col .card:hover .fa-cart-plus {
+  transition: right 2s, bottom 2s;
+  box-shadow: 1px 1px 5px 5px rgb(255, 251, 0);
+}
+#store .col .card:hover .fa-cart-plus:active {
+  box-shadow: 1px 1px 5px 5px green;
+}
+.show {
+  display: block;
+}
+.hide {
+  display: none;
 }

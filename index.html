@@ -29,13 +29,13 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul id="navlinks" class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link " style="color: rgb(239, 121, 152);" href="#">Home</a>
+                        <a class="nav-link " style="color: rgb(239, 121, 152);" href="#home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" style="color: rgb(239, 121, 152);" href="#">About</a>
+                        <a class="nav-link" style="color: rgb(239, 121, 152);" href="#about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" style="color: rgb(239, 121, 152);" href="#">Store</a>
+                        <a class="nav-link" style="color: rgb(239, 121, 152);" href="#store">Store</a>
                     </li>
 
                 </ul>
@@ -53,41 +53,7 @@
                                     $10.49</span>
                             </button>
                             <ul id="cartContent" class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li>
-                                    <a class="dropdown-item" href="#">
-                                        <div><img style="width:4rem;height:4rem" src="./Pics/cake-1.jpeg" alt="">Cake 1
-                                        </div>
-                                        <div class="price">$5</div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#">
-                                        <div><img style="width:4rem;height:4rem" src="./Pics/cake-1.jpeg" alt="">Cake 1
-                                        </div>
-                                        <div class="price">$5</div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#">
-                                        <div><img style="width:4rem;height:4rem" src="./Pics/cake-1.jpeg" alt="">Cake 1
-                                        </div>
-                                        <div class="price">$5</div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#">
-                                        <div><img style="width:4rem;height:4rem" src="./Pics/cake-1.jpeg" alt="">Cake 1
-                                        </div>
-                                        <div class="price">$5</div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#">
-                                        <div><img style="width:4rem;height:4rem" src="./Pics/cake-1.jpeg" alt="">Cake 1
-                                        </div>
-                                        <div class="price">$5</div>
-                                    </a>
-                                </li>
+
                             </ul>
                         </div>
                     </li>
@@ -134,20 +100,22 @@
         <div class="container">
             <h1>Our <span>Store</span></h1>
             <div id="filterbuttons">
-                <button class="hoverbutton" id="all">ALL</button>
-                <button class="hoverbutton" id="cakes">CAKES</button>
-                <button class="hoverbutton" id="cupcakes">CUPCAKES</button>
-                <button class="hoverbutton" id="sweets">SWEETS</button>
-                <button class="hoverbutton" id="doughnuts">DOUGHNUTS</button>
+                <button onclick="showAll('col')" class="hoverbutton" id="all">ALL</button>
+                <button onclick="filter('cake')" class="hoverbutton" id="cakes">CAKES</button>
+                <button onclick="filter('cupcake')" class="hoverbutton" id="cupcakes">CUPCAKES</button>
+                <button onclick="filter('sweet')" class="hoverbutton" id="sweets">SWEETS</button>
+                <button onclick="filter('doughnut')" class="hoverbutton" id="doughnuts">DOUGHNUTS</button>
             </div>
             <form>
-                <button><i class="fa-solid fa-magnifying-glass"></i></button><input placeholder="Item..." type="text">
+                <button><i class="fa-solid fa-magnifying-glass"></i></button><input id="filterInput"
+                    placeholder="Item..." type="text">
             </form>
             <!--Cards-->
-            <div class="row row-cols-1 row-cols-md-3 g-4">
-                <div class="col">
+            <div id="sth" class="row row-cols-1 row-cols-md-3 g-4">
+                <div id="sweet1" class="sweet col show">
                     <div class="card h-100">
-                        <img src="./Pics/sweets-1.jpeg" class="card-img-top" alt="...">
+                        <img src="./Pics/sweets-1.jpeg" class="card-img-top" alt="..."><i
+                            class="fa-solid fa-cart-plus"></i>
                         <div class="card-body">
                             <div class="card-title">
                                 <span>Sweet Item</span>
@@ -156,9 +124,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="card h-100">
+                <div id="cupcake1" class="cupcake col show">
+                    <div class=" card h-100">
                         <img src="./Pics/cupcake-1.jpeg" class="card-img-top" alt="...">
+                        <i class="fa-solid fa-cart-plus"></i>
                         <div class="card-body">
                             <div class="card-title">
                                 <span>Cupcake Item</span>
@@ -167,9 +136,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="./Pics/cake-1.jpeg" class="card-img-top" alt="...">
+                <div id="cake1" class="cake col show">
+                    <div class=" card h-100">
+                        <img src="./Pics/cake-1.jpeg" class="card-img-top" alt="..."><i
+                            class="fa-solid fa-cart-plus"></i>
                         <div class="card-body">
                             <div class="card-title">
                                 <span>Cake Item</span>
@@ -178,9 +148,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="./Pics/doughnut-1.jpeg" class="card-img-top" alt="...">
+                <div id="doughnut1" class="doughnut col show">
+                    <div class=" card h-100">
+                        <img src="./Pics/doughnut-1.jpeg" class="card-img-top" alt="..."><i
+                            class="fa-solid fa-cart-plus"></i>
                         <div class="card-body">
                             <div class="card-title">
                                 <span>Doughnut Item</span>
@@ -189,9 +160,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="./Pics/sweets-2.jpeg" class="card-img-top" alt="...">
+                <div id="sweet2" class="sweet col show">
+                    <div class=" card h-100">
+                        <img src="./Pics/sweets-2.jpeg" class="card-img-top" alt="..."><i
+                            class="fa-solid fa-cart-plus"></i>
                         <div class="card-body">
                             <div class="card-title">
                                 <span>Sweet Item</span>
@@ -200,9 +172,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="./Pics/cupcake-2.jpeg" class="card-img-top" alt="...">
+                <div id="cupcake2" class="cupcake col show">
+                    <div class=" card h-100">
+                        <img src="./Pics/cupcake-2.jpeg" class="card-img-top" alt="..."><i
+                            class="fa-solid fa-cart-plus"></i>
                         <div class="card-body">
                             <div class="card-title">
                                 <span>Cupcake Item</span>
@@ -211,9 +184,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="./Pics/cake-2.jpeg" class="card-img-top" alt="...">
+                <div id="cake2" class="cake col show">
+                    <div class=" card h-100">
+                        <img src="./Pics/cake-2.jpeg" class="card-img-top" alt="..."><i
+                            class="fa-solid fa-cart-plus"></i>
                         <div class="card-body">
                             <div class="card-title">
                                 <span>Cake Item</span>
@@ -222,9 +196,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="./Pics/doughnut-2.jpeg" class="card-img-top" alt="...">
+                <div id="doughnut2" class="doughnut col show">
+                    <div class=" card h-100">
+                        <img src="./Pics/doughnut-2.jpeg" class="card-img-top" alt="..."><i
+                            class="fa-solid fa-cart-plus"></i>
                         <div class="card-body">
                             <div class="card-title">
                                 <span>Doughnut Item</span>
@@ -233,9 +208,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="./Pics/sweets-3.jpeg" class="card-img-top" alt="...">
+                <div id="sweet3" class="sweet col show">
+                    <div class=" card h-100">
+                        <img src="./Pics/sweets-3.jpeg" class="card-img-top" alt="..."><i
+                            class="fa-solid fa-cart-plus"></i>
                         <div class="card-body">
                             <div class="card-title">
                                 <span>Sweet Item</span>
@@ -244,9 +220,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="./Pics/cupcake-3.jpeg" class="card-img-top" alt="...">
+                <div id="cupcake3" class="cupcake col show">
+                    <div class=" card h-100">
+                        <img src="./Pics/cupcake-3.jpeg" class="card-img-top" alt="..."><i
+                            class="fa-solid fa-cart-plus"></i>
                         <div class="card-body">
                             <div class="card-title">
                                 <span>Cupcake Item</span>
@@ -255,9 +232,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="./Pics/cake-3.jpeg" class="card-img-top" alt="...">
+                <div id="cake3" class="cake col show">
+                    <div class=" card h-100">
+                        <img src="./Pics/cake-3.jpeg" class="card-img-top" alt="..."><i
+                            class="fa-solid fa-cart-plus"></i>
                         <div class="card-body">
                             <div class="card-title">
                                 <span ">Cake Item</span>
@@ -266,9 +244,10 @@
                         </div>
                     </div>
                 </div>
-                <div class=" col">
-                                    <div class="card h-100">
-                                        <img src="./Pics/doughnut-3.jpeg" class="card-img-top" alt="...">
+                <div class=" doughnut col show">
+                                    <div id="doughnut3" class="card h-100">
+                                        <img src="./Pics/doughnut-3.jpeg" class="card-img-top" alt="..."><i
+                                            class="fa-solid fa-cart-plus"></i>
                                         <div class="card-body">
                                             <div class="card-title">
                                                 <span>Doughnut Item</span>
