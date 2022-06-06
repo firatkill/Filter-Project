@@ -72,7 +72,7 @@ function filterByInput(e) {
           i
         ].firstElementChild.children[2].firstElementChild.firstElementChild.textContent
           .toLowerCase()
-          .indexOf(input.value.toLowerCase().trim()) > 0
+          .indexOf(input.value.toLowerCase().trim()) > -1
       ) {
         card.children[i].classList.replace("hide", "show");
       }
