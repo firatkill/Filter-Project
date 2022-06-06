@@ -107,8 +107,8 @@
                 <button onclick="filter('doughnut')" class="hoverbutton" id="doughnuts">DOUGHNUTS</button>
             </div>
             <form>
-                <button><i class="fa-solid fa-magnifying-glass"></i></button><input id="filterInput"
-                    placeholder="Item..." type="text">
+                <button><i class="fa-solid fa-magnifying-glass"></i></button><input oninput="filterByInput()"
+                    id="filterInput" placeholder="Item..." type="text">
             </form>
             <!--Cards-->
             <div id="sth" class="row row-cols-1 row-cols-md-3 g-4">

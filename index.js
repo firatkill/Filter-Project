@@ -61,21 +61,18 @@ function addToCart(e) {
                                 </li> `;
   }
 }
-input.addEventListener("keypress", filterByInput);
+
 function filterByInput(e) {
-  if (e.keyCode == 13) {
-    e.preventDefault()
-    hideAll("col");
-    for (let i = 0; i < card.children.length; i++) {
-      if (
-        card.children[
-          i
-        ].firstElementChild.children[2].firstElementChild.firstElementChild.textContent
-          .toLowerCase()
-          .indexOf(input.value.toLowerCase().trim()) > -1
-      ) {
-        card.children[i].classList.replace("hide", "show");
-      }
+  hideAll("col");
+  for (let i = 0; i < card.children.length; i++) {
+    if (
+      card.children[
+        i
+      ].firstElementChild.children[2].firstElementChild.firstElementChild.textContent
+        .toLowerCase()
+        .indexOf(input.value.toLowerCase().trim()) > -1
+    ) {
+      card.children[i].classList.replace("hide", "show");
     }
   }
 }
