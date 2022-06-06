@@ -64,6 +64,7 @@ function addToCart(e) {
 input.addEventListener("keypress", filterByInput);
 function filterByInput(e) {
   if (e.keyCode == 13) {
+    e.preventDefault()
     hideAll("col");
     for (let i = 0; i < card.children.length; i++) {
       if (
